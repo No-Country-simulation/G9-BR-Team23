@@ -21,4 +21,46 @@ public class Arquivo {
     private String caminhoArquivo;
     @Column(name = "data_upload", nullable = false)
     private LocalDateTime dataUpload;
+
+    public Arquivo() {
+    }
+
+    public Arquivo(UUID idArquivo, String nomeArquivo, String caminhoArquivo, LocalDateTime dataUpload) {
+        this.idArquivo = idArquivo;
+        this.nomeArquivo = nomeArquivo;
+        this.caminhoArquivo = caminhoArquivo;
+        this.dataUpload = dataUpload;
+    }
+
+    public UUID getIdArquivo() {
+        return idArquivo;
+    }
+
+    public void setIdArquivo(UUID idArquivo) {
+        this.idArquivo = idArquivo;
+    }
+
+    public String getNomeArquivo() {
+        return nomeArquivo;
+    }
+
+    public void setNomeArquivo(String nomeArquivo) {
+        this.nomeArquivo = nomeArquivo;
+    }
+
+    public String getCaminhoArquivo() {
+        return caminhoArquivo;
+    }
+
+    public void setCaminhoArquivo(String caminhoArquivo) {
+        this.caminhoArquivo = caminhoArquivo;
+    }
+
+    public LocalDateTime getDataUpload() {
+        return dataUpload;
+    }
+
+    public void setDataUpload(LocalDateTime dataUpload) {
+        this.dataUpload = dataUpload;
+    }
 }
