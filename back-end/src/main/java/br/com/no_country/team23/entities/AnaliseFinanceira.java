@@ -1,12 +1,20 @@
 package br.com.no_country.team23.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
 @Table(name = "analises_financeiras")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class AnaliseFinanceira {
     @Id
     @Column(name = "id_analise_financeira", nullable = false, unique = true)
@@ -30,90 +38,4 @@ public class AnaliseFinanceira {
     @Column(name = "gerado_em", nullable = false)
     private LocalDateTime geradoEm;
 
-    public AnaliseFinanceira() {
-    }
-
-    public AnaliseFinanceira(UUID idAnaliseFinanceira, Usuario usuarioId, PerfilFinanceiro perfilFinanceiroId, LocalDateTime periodoComeco, LocalDateTime periodoFim, boolean iaAcerto, String resumoGastos, String conselho, LocalDateTime geradoEm) {
-        this.idAnaliseFinanceira = idAnaliseFinanceira;
-        this.usuarioId = usuarioId;
-        this.perfilFinanceiroId = perfilFinanceiroId;
-        this.periodoComeco = periodoComeco;
-        this.periodoFim = periodoFim;
-        this.iaAcerto = iaAcerto;
-        this.resumoGastos = resumoGastos;
-        this.conselho = conselho;
-        this.geradoEm = geradoEm;
-    }
-
-    public UUID getIdAnaliseFinanceira() {
-        return idAnaliseFinanceira;
-    }
-
-    public void setIdAnaliseFinanceira(UUID idAnaliseFinanceira) {
-        this.idAnaliseFinanceira = idAnaliseFinanceira;
-    }
-
-    public Usuario getUsuarioId() {
-        return usuarioId;
-    }
-
-    public void setUsuarioId(Usuario usuarioId) {
-        this.usuarioId = usuarioId;
-    }
-
-    public PerfilFinanceiro getPerfilFinanceiroId() {
-        return perfilFinanceiroId;
-    }
-
-    public void setPerfilFinanceiroId(PerfilFinanceiro perfilFinanceiroId) {
-        this.perfilFinanceiroId = perfilFinanceiroId;
-    }
-
-    public LocalDateTime getPeriodoComeco() {
-        return periodoComeco;
-    }
-
-    public void setPeriodoComeco(LocalDateTime periodoComeco) {
-        this.periodoComeco = periodoComeco;
-    }
-
-    public LocalDateTime getPeriodoFim() {
-        return periodoFim;
-    }
-
-    public void setPeriodoFim(LocalDateTime periodoFim) {
-        this.periodoFim = periodoFim;
-    }
-
-    public boolean isIaAcerto() {
-        return iaAcerto;
-    }
-
-    public void setIaAcerto(boolean iaAcerto) {
-        this.iaAcerto = iaAcerto;
-    }
-
-    public String getResumoGastos() {
-        return resumoGastos;
-    }
-
-    public void setResumoGastos(String resumoGastos) {
-        this.resumoGastos = resumoGastos;
-    }
-
-    public String getConselho() {
-        return conselho;
-    }
-
-    public void setConselho(String conselho) {
-        this.conselho = conselho;
-    }
-
-    public LocalDateTime getGeradoEm() {
-        return geradoEm;
-    }
-
-    public void setGeradoEm(LocalDateTime geradoEm) {
-        this.geradoEm = geradoEm;
-    }
 }

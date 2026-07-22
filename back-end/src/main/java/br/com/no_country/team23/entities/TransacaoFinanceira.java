@@ -1,12 +1,20 @@
 package br.com.no_country.team23.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
 @Table(name = "transacoes_financeiras")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class TransacaoFinanceira {
     @Column(name = "id_transacao", nullable = false, unique = true)
     @Id
@@ -31,82 +39,4 @@ public class TransacaoFinanceira {
     private String descricao;
     @Column(name = "parcelamento_restantes")
     private int parcelamentoRestantes;
-
-    public TransacaoFinanceira() {
-    }
-
-    public TransacaoFinanceira(UUID idTransacao, Usuario usuarioId, Arquivo arquivoId, Categoria categoriaId, LocalDateTime dataTransacao, double valor, String descricao, int parcelamentoRestantes) {
-        this.idTransacao = idTransacao;
-        this.usuarioId = usuarioId;
-        this.arquivoId = arquivoId;
-        this.categoriaId = categoriaId;
-        this.dataTransacao = dataTransacao;
-        this.valor = valor;
-        this.descricao = descricao;
-        this.parcelamentoRestantes = parcelamentoRestantes;
-    }
-
-    public UUID getIdTransacao() {
-        return idTransacao;
-    }
-
-    public void setIdTransacao(UUID idTransacao) {
-        this.idTransacao = idTransacao;
-    }
-
-    public Usuario getUsuarioId() {
-        return usuarioId;
-    }
-
-    public void setUsuarioId(Usuario usuarioId) {
-        this.usuarioId = usuarioId;
-    }
-
-    public Arquivo getArquivoId() {
-        return arquivoId;
-    }
-
-    public void setArquivoId(Arquivo arquivoId) {
-        this.arquivoId = arquivoId;
-    }
-
-    public Categoria getCategoriaId() {
-        return categoriaId;
-    }
-
-    public void setCategoriaId(Categoria categoriaId) {
-        this.categoriaId = categoriaId;
-    }
-
-    public LocalDateTime getDataTransacao() {
-        return dataTransacao;
-    }
-
-    public void setDataTransacao(LocalDateTime dataTransacao) {
-        this.dataTransacao = dataTransacao;
-    }
-
-    public double getValor() {
-        return valor;
-    }
-
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public int getParcelamentoRestantes() {
-        return parcelamentoRestantes;
-    }
-
-    public void setParcelamentoRestantes(int parcelamentoRestantes) {
-        this.parcelamentoRestantes = parcelamentoRestantes;
-    }
 }

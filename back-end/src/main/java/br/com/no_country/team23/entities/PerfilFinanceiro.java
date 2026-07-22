@@ -4,9 +4,17 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "perfis_financeiros")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class PerfilFinanceiro {
     @Id
     @Column(name = "id_perfil_financeiro", nullable = false, unique = true)
@@ -15,37 +23,4 @@ public class PerfilFinanceiro {
     private String nomePerfilFinanceiro;
     @Column(name = "descricao_perfil_financeiro", nullable = false)
     private String descricaoPerfilFinanceiro;
-
-    public PerfilFinanceiro() {
-    }
-
-    public PerfilFinanceiro(String idPerfilFinanceiro, String nomePerfilFinanceiro, String descricaoPerfilFinanceiro) {
-        this.idPerfilFinanceiro = idPerfilFinanceiro;
-        this.nomePerfilFinanceiro = nomePerfilFinanceiro;
-        this.descricaoPerfilFinanceiro = descricaoPerfilFinanceiro;
-    }
-
-    public String getIdPerfilFinanceiro() {
-        return idPerfilFinanceiro;
-    }
-
-    public void setIdPerfilFinanceiro(String idPerfilFinanceiro) {
-        this.idPerfilFinanceiro = idPerfilFinanceiro;
-    }
-
-    public String getNomePerfilFinanceiro() {
-        return nomePerfilFinanceiro;
-    }
-
-    public void setNomePerfilFinanceiro(String nomePerfilFinanceiro) {
-        this.nomePerfilFinanceiro = nomePerfilFinanceiro;
-    }
-
-    public String getDescricaoPerfilFinanceiro() {
-        return descricaoPerfilFinanceiro;
-    }
-
-    public void setDescricaoPerfilFinanceiro(String descricaoPerfilFinanceiro) {
-        this.descricaoPerfilFinanceiro = descricaoPerfilFinanceiro;
-    }
 }
